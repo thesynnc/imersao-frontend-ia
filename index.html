@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOT Flix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="logo"><span class="logo-not">NOT</span> <span class="logo-flix">FLIX</span></div>
+            <div class="header-content">
+                <h1>Quem está assistindo?</h1>
+                <p>Escolha um perfil para começar a assistir</p>
+            </div>
+        </header>
+        <section class="container" aria-label="Seletor de perfis">
+            <ul class="profiles-list" id="profiles-list" aria-label="Lista de perfis disponíveis">
+                <!-- Perfis serão carregados dinamicamente -->
+            </ul>
+            <div class="nav-buttons">
+                <button class="nav-button manage-button" onclick="window.location.href='manage-profiles.html'">
+                    <i class="fas fa-cog"></i> Gerenciar Perfis
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/profiles-utils.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Perfis - NOT Flix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="logo-wrapper">
+                <button class="back-button" onclick="window.location.href='index.html'" aria-label="Voltar para seleção de perfis">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>               
+            </div>
+            <div class="header-content">
+                <div class="logo"><span class="logo-not">NOT</span> <span class="logo-flix">FLIX</span></div>
+                <h1>Gerenciar Perfis</h1>
+                <p>Selecione um perfil para editar</p>
+            </div>
+        </header>
+        <section class="container" aria-label="Gerenciamento de perfis">
+            <ul class="profiles-list" id="profiles-list" aria-label="Lista de perfis para gerenciamento">
+                <!-- Perfis serão carregados dinamicamente -->
+            </ul>
+            <button class="profile-card add-profile" aria-label="Adicionar Perfil" onclick="window.location.href='new-create.html'">
+                <div class="profile-circle" aria-hidden="true">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <span class="profile-name">Adicionar Perfil</span>
+            </button>
+        </section>
+    </main>
+
+    <script src="js/profiles-utils.js"></script>
+    <script src="js/manage-profiles.js"></script>
+</body>
+
+</html>

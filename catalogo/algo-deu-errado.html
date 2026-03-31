@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo deu errado - Not Flix</title>
+    <link rel="stylesheet" href="catalogo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 4% 0 4%;
+            background: linear-gradient(135deg, rgba(229, 9, 20, 0.1) 0%, rgba(20, 20, 20, 1) 100%);
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .error-icon {
+            font-size: 120px;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
+
+        .error-code {
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--netflix-red);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .error-message {
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .error-description {
+            font-size: 16px;
+            color: #b3b3b3;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .error-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-error {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-error {
+            background-color: var(--netflix-red);
+            color: white;
+        }
+
+        .btn-primary-error:hover {
+            background-color: #c30812;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary-error {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 2px solid var(--text-color);
+        }
+
+        .btn-secondary-error:hover {
+            color: var(--netflix-red);
+            border-color: var(--netflix-red);
+            transform: scale(1.05);
+        }
+
+        .error-footer-text {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #808080;
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 48px;
+            }
+
+            .error-message {
+                font-size: 24px;
+            }
+
+            .error-icon {
+                font-size: 80px;
+            }
+
+            .error-buttons {
+                flex-direction: column;
+            }
+
+            .btn-error {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <button class="logo-button" aria-label="Ir para página inicial" onclick="goHome()">
+                    <div class="logo"><span class="logo-not">NOT</span> <span class="logo-flix">FLIX</span></div>
+                </button>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="catalogo.html">Início</a></li>
+                    <li><a href="algo-deu-errado.html" onclick="showMessage()">Séries</a></li>
+                    <li><a href="algo-deu-errado.html" onclick="showMessage()">Filmes</a></li>
+                    <li><a href="algo-deu-errado.html" onclick="showMessage()">Jogos</a></li>
+                    <li><a href="algo-deu-errado.html" onclick="showMessage()">Bombando</a></li>
+                    <li><a href="algo-deu-errado.html" onclick="showMessage()">Minha lista</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <i class="fas fa-search icon"></i>
+            <a href="#" class="kids-link">Seu nome</a>
+            <div class="nav-notification">
+                <i class="fas fa-bell icon"></i>
+                <span class="notification-badge">18</span>
+            </div>
+            <a href="#" class="profile-menu" style="text-decoration: none; color: inherit;">
+                <img class="profile-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+                    alt="Profile">
+                <i class="fas fa-caret-down icon" style="font-size: 14px; margin-left: 5px;"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Error Content -->
+    <main class="error-container">
+        <div class="error-content">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="error-code">404</div>
+            <h1 class="error-message">Oops! Algo deu errado</h1>
+            <p class="error-description">
+                Desculpe, a página que você está procurando não existe ou ainda não foi criada.<br>
+                Pode ter sido movida ou removida do nosso catálogo.
+            </p>
+            
+            <div class="error-buttons">
+                <button class="btn-error btn-primary-error" onclick="goHome()">
+                    <i class="fas fa-home" style="margin-right: 8px;"></i>Voltar para Início
+                </button>
+                <button class="btn-error btn-secondary-error" onclick="goBack()">
+                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>Voltar
+                </button>
+            </div>
+
+            <div class="error-footer-text">
+                <p>Código do erro: 404 | Página não encontrada</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function goHome() {
+            window.location.href = '../index.html';
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function showMessage() {
+            alert('Esta página ainda não foi criada. Você será redirecionado para a página de erro.');
+            window.location.href = 'algo-deu-errado.html';
+        }
+    </script>
+</body>
+
+</html>
+    <footer>
+        <div class="footer-content">
+            <a href="https://www.alura.com.br/" target="_blank">
+                <p>Imersão Alura AI</p>
+            </a>
+            <ul class="footer-links">
+                <li><a href="https://www.alura.com.br/" target="_blank">Perguntas frequentes</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Centro de ajuda</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Conta</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Imprensa</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Relações com investidores</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Carreiras</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Formas de assistir</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Termos de uso</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Privacidade</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Preferências de cookies</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Informações corporativas</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Entre em contato</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Teste de velocidade</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Avisos legais</a></li>
+                <li><a href="https://www.alura.com.br/" target="_blank">Só na Netflix</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
